@@ -1,21 +1,20 @@
 using UnityEngine;
 public class CameraController : MonoBehaviour
 {
-    public Transform target; // Цель для фокусировки камеры
-    public float zoomSpeed = 10f; // Скорость приближения/отдаления
-    public float moveSpeed = 0.1f; // Скорость перемещения камеры
-    public float rotationSpeed = 5f; // Скорость вращения камеры вокруг объекта
-    public Vector3 offset; // Смещение камеры от цели
+    public Transform target;
+    public float zoomSpeed = 10f;
+    public float moveSpeed = 0.1f;
+    public float rotationSpeed = 5f;
+    public Vector3 offset;
 
-    private Vector3 lastMousePosition; // Последняя позиция мыши
-    private float lastClickTime = 0f; // Время последнего клика
-    private float catchTime = 0.3f; // Время для двойного клика
+    private Vector3 lastMousePosition;
+    private float lastClickTime = 0f;
+    private float catchTime = 0.3f;
 
     void Start()
     {
         if (target != null)
         {
-            // Устанавливаем начальное смещение камеры от цели
             offset = transform.position - target.position;
         }
     }
